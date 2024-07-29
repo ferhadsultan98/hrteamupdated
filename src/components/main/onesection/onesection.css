@@ -1,130 +1,107 @@
-body {
-    overflow-x: hidden;
+/* Genel Slider Stilleri */
+.sliderbodys {
+  margin: 0;
+  padding: 0;
+  height: 84vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #454545;
 }
 
-.CarouselPart-One {
-    width: 100vw;
-    height: 83vh;
-    position: relative;
-    cursor: grab;
+.sliderbodys .slider-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 5px solid lightgray;
+  overflow: hidden;
 }
 
-.CarouselPart-One .OneCaption {
-    width: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    padding: 30px;
-    font-size: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.OneCaption .oneTheme{
-    max-width: 45vw;
-}
-.OneCaption .oneVector{
-    width: 40vw;
-}
-.OneCaption .oneVector img{
-    width: 100%;
-    height: 100%;
-}
-.CarouselPart-One img {
-    width: 100%;
-    height: 100%;
+.sliderbodys .image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-
-
-/* Two Start */
-.CarouselPart-Two {
-    width: 100vw;
-    height: 83vh;
-    position: relative;
-    cursor: grab;
+.sliderbodys img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-.CarouselPart-Two .TwoCaption {
-    width: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    padding: 30px;
-    font-size: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.sliderbodys img.image-active {
+  opacity: 1;
+  transition: opacity 0.5s;
 }
-.TwoCaption .twoTheme{
-    max-width: 50vw;
-}
-.TwoCaption .twoVector{
-    width: 35vw;
-}
- .twoVector img{
-    width: 100%;
-    height: 100%;
-}
-.CarouselPart-Two img {
-    width: 100%;
-    height: 100%;
-}
-/*  Three Start */
 
+/* Navigation Arrows */
+.sliderbodys .nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
 
+.sliderbodys .prev-arrow {
+  left: 10px;
+}
 
-.CarouselPart-Three{
-    width: 100vw;
-    height: 83vh;
-    position: relative;
-    cursor: grab;
+.sliderbodys .next-arrow {
+  right: 10px;
 }
-.CarouselPart-Three .ThreeCaption{
-    width: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    padding: 30px;
-    font-size: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.ThreeCaption .threeTheme{
-    max-width: 55vw;
-}
-.ThreeCaption .threeVector{
-    width: 35vw;
-}
-.threeVector img{
-    width: 100%;
-    height: 100%;
-}
-.CarouselPart-Three img{
-    width: 100%;
-    height: 100%;
+
+.sliderbodys .nav-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
 
-@media (max-width: 600px) {
-    .CarouselPart-One{
-        height: 40vh;
-    }
-    .CarouselPart-One .OneCaption{
-        font-size: 15px;
-    }
-    .CarouselPart-Two{
-        height: 40vh;
-    }
-    .CarouselPart-Two .TwoCaption{
-        font-size: 15px;
-    }
-    .CarouselPart-Three{
-        height: 40vh;
-    }
-    .CarouselPart-Three .ThreeCaption{
-        font-size: 15px;
-    }
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+  .sliderbodys {
+    height: 40vh; 
+  }
+
+  .sliderbodys .nav-arrow {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+
+  .sliderbodys .search-icon {
+    font-size: 1.2rem;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sliderbodys {
+    height: 40vh; 
+  }
+
+  .sliderbodys .nav-arrow {
+    font-size: 1.2rem;
+    padding: 3px;
+  }
+
+  .sliderbodys .search-icon {
+    font-size: 1rem;
+    top: 5px;
+    right: 5px;
+  }
 }

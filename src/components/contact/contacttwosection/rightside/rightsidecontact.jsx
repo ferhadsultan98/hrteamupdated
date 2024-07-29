@@ -27,12 +27,12 @@ let RightSideContact = () => {
         </div>
       </div>
       <div className="EmailPhone">
-        <div className="email">
+        <div className="emailss">
           <label htmlFor="email">Email</label>
           <input type="email" id="email" placeholder="Email daxil edin" required/>
           <hr />
         </div>
-        <div className="phone">
+        <div className="phoness">
           <label htmlFor="phone">Telefon</label>
           <input type="text" id="phone" placeholder="Əlaqə nömrəsi daxil edin" required/>
           <hr />

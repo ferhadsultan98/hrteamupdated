@@ -1,17 +1,24 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import LogoImage from "../../assets/hrteamlogo.png";
 import "../footer/footer.css";
+import ScrollButton from "../scroll/scroll";
+import { RiUserFollowLine } from "react-icons/ri";
+import i18n from "../Languages/i18n";
+import { useTranslation } from "react-i18next";
+
 
 let Footer = () => {
+  const { t, i18n } = useTranslation();
   return (
+    <>
+    <ScrollButton/>
     <div className="footerstart">
       <div className="footer-flex">
         <div className="information">
-          <h1>Əlaqə</h1>
+          <h1>{t('header.contact')}</h1>
           <p>
             <a href="https://maps.app.goo.gl/txWq2nTwBBEc9zzQ8" target="_blank">
-              Abdulvahab Salamzadə küçəsi ev 65a
+            {t('footer.maps')}
             </a>
           </p>
           <p>
@@ -22,78 +29,75 @@ let Footer = () => {
           </p>
           <div className="socialmedias">
             <div className="fb">
-              <FaFacebookF />
+              <p><FaFacebookF /></p>
             </div>
             <div className="insta">
-              <FaInstagram />
+              <p><FaInstagram /></p>
             </div>
             <div className="linkedin">
-              <FaLinkedinIn />
+              <p><FaLinkedinIn /></p>
             </div>
           </div>
         </div>
         <div className="usefullinks">
-          <h1>Vacib keçidlər</h1>
+          <h1>{t('footer.usefullinks')}</h1>
           <p>
-            <a href="#">Haqqımızda</a>
+            <a href="#">{t('header.about')}</a>
           </p>
           <p>
-            <a href="#">Yeniliklər</a>
+            <a href="#">{t('footer.news')}</a>
           </p>
           <p>
-            <a href="#">Xidmətlərimiz</a>
+            <a href="#">{t('header.services')}</a>
           </p>
           <p>
-            <a href="#">Dəstək</a>
+            <a href="#">{t('footer.support')}</a>
           </p>
         </div>
         <div className="ourservices">
-          <h1>Xidmətlərimiz</h1>
+          <h1>{t('header.services')}</h1>
           <div className="services">
-            <div className="servicesone">
               <p>
-                <a href="">İnsan Resurslarının Autsorsinqi</a>
+                <a href="">{t('header.service1')}</a>
               </p>
               <p>
-                <a href="">İşə qəbul Autsorsinqi</a>
+                <a href="">{t('header.service2')}</a>
               </p>
               <p>
-                <a href="">İşçi qüvvəsi təchizatı</a>
+                <a href="">{t('header.service3')}</a>
               </p>
               <p>
-                <a href="">Satınalma Autsorsinqi</a>
-              </p>
-            </div>
-            <div className="servicestwo">
-              <p>
-                <a href="">Əmək haqqının hesablanması Autsorsinqi</a>
+                <a href="">{t('header.service4')}</a>
               </p>
               <p>
-                <a href="">Mühasibatlıq Autsorsinqi</a>
+                <a href="">{t('header.service5')}</a>
               </p>
               <p>
-                <a href="">İmmiqrasiya Autsorsinqi</a>
+                <a href="">{t('header.service6')}</a>
               </p>
               <p>
-                <a href="">Təlim və qiymətləndirmə</a>
+                <a href="">{t('header.service7')}</a>
               </p>
-            </div>
+              <p>
+                <a href="">{t('header.service8')}</a>
+              </p>
           </div>
         </div>
         <div className="latestupdate">
-          <h1>Son yeniliklər</h1>
-          <p>Yeniliklərdən xəbərdar olmaq üçün abunə olun</p>
+          <h1>{t('footer.latestupdate')}</h1>
+          <p>{t('footer.subs')}</p>
           <form className="subscribelatest" action="#">
             <input
               type="email"
               name="email"
               id="email"
-              placeholder="Email yazın"
+              placeholder={t('footer.inputholder')}
               required
               autoComplete="off"
               maxLength={25}
             />
-            <input type="submit" id="subscribebutton" value={"Abunə ol"} />
+            <button id="subscribebutton" type="submit"><RiUserFollowLine />
+            </button>
           </form>
         </div>
       </div>
@@ -105,6 +109,7 @@ let Footer = () => {
         </a>
       </p>
     </div>
+    </>
   );
 };
 

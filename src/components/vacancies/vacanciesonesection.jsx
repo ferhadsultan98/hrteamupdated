@@ -1,14 +1,15 @@
 import React from "react";
 import "../vacancies/vacancies.css";
-import VacanciesBackImage from "../../assets/vacancies.jpg";
+import VacanciesBackImage from "../../assets/vacanciess.jpg";
+import { Link } from "react-router-dom";
 
 let VacanciesOneSection = () => {
   return (
     <div className="VacanciesBackImage">
       <img src={VacanciesBackImage} alt="VacanciesBackImage" />
       <div className="content">
-        <h1>Əsas səhifə </h1>
-        <h1>  / Vakansiyalar</h1>
+        <Link to="/"><h3>Əsas səhifə /</h3></Link>
+        <h3>  Vakansiyalar</h3>
       </div>
     </div>
   );

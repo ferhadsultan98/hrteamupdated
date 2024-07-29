@@ -8,72 +8,50 @@ let VacanciesTwoSection = () => {
     Aos.init();
      }, [])
   return (
-    <>
-    <div className="VacanciesContainer">
-      <div className="VacanciesHeader" data-aos="zoom-in-up">
-        <h1>Aktiv Vakansiyalar</h1>
-        <p>Vakansiyalarımızı izləyərək iş təkliflərimizdən yararlanın</p>
-      </div>
+    <div className="bbody">
+  <div className="header">
+    <h1>İş İlanları - Şirket Adı</h1>
+  </div>
+  <div className="container">
+    <div className="job-listing">
+      <img src="image1.jpg" alt="Pozisyon Resmi" className="job-image" />
+      <h3>Pozisyon Adı 1</h3>
+      <p>Açıklama: Bu pozisyonla ilgili kısa açıklama buraya yazılır.</p>
+      <ul>
+        <li>
+          Gerekli Nitelikler:
+          <ul>
+            <li>Nitelik 1</li>
+            <li>Nitelik 2</li>
+            <li>Nitelik 3</li>
+          </ul>
+        </li>
+      </ul>
+      <a href="mailto:ornek@ornek.com" className="apply-link">
+        Başvuru için e-posta gönderin
+      </a>
     </div>
-       <div className="VacanciesInfo" data-aos="zoom-in-down">
-        <div className="vacinfo">
-      <a href="#"><ul >
-         <li>Vakansiya edən şirkət</li>
-         <li>Vakansiya məlumatı</li>
-         <li>Tarix</li>
-       </ul>
-       </a> 
-      <a href="#"><ul >
-         <li>Vakansiya edən şirkət</li>
-         <li>Vakansiya məlumatı</li>
-         <li>Tarix</li>
-       </ul>
-       </a> 
-      <a href="#"><ul >
-         <li>Vakansiya edən şirkət</li>
-         <li>Vakansiya məlumatı</li>
-         <li>Tarix</li>
-       </ul>
-       </a> 
-      <a href="#"><ul >
-         <li>Vakansiya edən şirkət</li>
-         <li>Vakansiya məlumatı</li>
-         <li>Tarix</li>
-       </ul>
-       </a> 
-      <a href="#"><ul >
-         <li>Vakansiya edən şirkət</li>
-         <li>Vakansiya məlumatı</li>
-         <li>Tarix</li>
-       </ul>
-       </a> 
-      <a href="#"><ul >
-         <li>Vakansiya edən şirkət</li>
-         <li>Vakansiya məlumatı</li>
-         <li>Tarix</li>
-       </ul>
-       </a> 
-      <a href="#"><ul >
-         <li>Vakansiya edən şirkət</li>
-         <li>Vakansiya məlumatı</li>
-         <li>Tarix</li>
-       </ul>
-       </a> 
-      <a href="#"><ul >
-         <li>Vakansiya edən şirkət</li>
-         <li>Vakansiya məlumatı</li>
-         <li>Tarix</li>
-       </ul>
-       </a> 
-      <a href="#"><ul >
-         <li>Vakansiya edən şirkət</li>
-         <li>Vakansiya məlumatı</li>
-         <li>Tarix</li>
-       </ul>
-       </a> 
-       </div>
-     </div>
-     </>
+    <div className="job-listing">
+      <img src="image2.jpg" alt="Pozisyon Resmi" className="job-image" />
+      <h3>Pozisyon Adı 2</h3>
+      <p>Açıklama: Bu pozisyonla ilgili kısa açıklama buraya yazılır.</p>
+      <ul>
+        <li>
+          Gerekli Nitelikler:
+          <ul>
+            <li>Nitelik 1</li>
+            <li>Nitelik 2</li>
+            <li>Nitelik 3</li>
+          </ul>
+        </li>
+      </ul>
+      <a href="mailto:ornek@ornek.com" className="apply-link">
+        Başvuru için e-posta gönderin
+      </a>
+    </div>
+  </div>
+  </div>
+
   );
 };
 

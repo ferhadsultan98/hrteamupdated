@@ -1,13 +1,16 @@
 import React from "react";
 import "../about/about.css";
-import AboutOneSection from "./aboutonesection";
-import AboutTwoSection from "./abouttwosection";
+import AboutOneSection from "./onesection/aboutonesection";
+import AboutTwoSection from "./twosection/abouttwosection";
+import ThreeSection from "./threesection/threesection";
+
 
 let About = () => {
   return (
     <>
       <AboutOneSection />
       <AboutTwoSection/>
+      <ThreeSection/>
     </>
   );
 };

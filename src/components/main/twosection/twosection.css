@@ -3,6 +3,7 @@
 	display: flex;
 	justify-content: center;
 	height: 30vh;
+	margin-top: 8vh;
 }
 
 
@@ -53,4 +54,20 @@
 
 .slider .slide:hover {
 	filter: none;
+}
+
+@media (max-width: 767px){
+	.slider .slide a img{
+		height: 40px;
+		width: 50px;
+	}
+	.slider{
+		height: 60px;
+	}
+	.slider .slide{
+		height: 60px;
+	}
+	.bodys{
+		height: 15vh;
+	}
 }

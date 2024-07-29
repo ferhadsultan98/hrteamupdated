@@ -1,0 +1,39 @@
+{
+  "header": {
+    "homepage": "Home Page",
+    "about": "About Us",
+    "services": "Services",
+    "service1": "Human Resource Outsourcing",
+    "service2": "Recruitment Outsourcing",
+    "service3": "Manpower supply",
+    "service4": "Purchasing Outsourcing",
+    "service5": "Payroll Outsourcing",
+    "service6": "Accounting Outsourcing",
+    "service7": "Immigration Outsourcing",
+    "service8": "Training and evaluation",
+    "vacancies": "Vacancies",
+    "contact": "Contact Us",
+    "startbtn": "Hire me"
+  },
+  "main": {
+    "onecaptionheader": "Recruitment Process",
+    "onecaptiontext": "When it comes to Human Resources, I would say that hiring process is usually the first thing that comes to mind. Because assigning the right resource to the right position is the most critical job for a company.",
+    "twocaptionheader": "Performance Management",
+    "twocaptiontext": "Hiring a professional isn't everything, but also getting great results from that employee. There are many different and important factors that influence this, from company culture to working hours.",
+    "threecaptionheader": "Staff Management",
+    "threecaptiontext": "This title can also be called the dark side of Human Resources management. It is a work department with documents such as collection of personal affairs, preparation of vacation-travel calendars, salary calculation, etc."
+  },
+  "footer": {
+    "usefullinks": "Useful links",
+    "news": "News",
+    "support": "Support",
+    "latestupdate": "Latest updates",
+    "subs": "Subscribe to receive updates",
+    "maps": "Abdulvahab Salamzade Street, house 65a",
+    "inputholder": "Write an email"
+  },
+  "notfoundpage": {
+      "title": "Something went wrong!",
+      "backtomain": "Back to main page."
+  }
+}

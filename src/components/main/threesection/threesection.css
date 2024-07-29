@@ -25,36 +25,40 @@
 }
 
 /* Three Section Started */
-.threesection h1 {
+.Threesection {
+  margin-bottom: 5vh;
+}
+
+.Threesection h1 {
   text-align: center;
   font-size: 55px;
 }
 
 .ThreeSectionCards {
+  margin-top: 30px;
   display: flex;
-  align-items: center;
-  place-content: center;
+  justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 15vh 0;
 }
 
 .ExpertiseCards {
-  width: 500px;
-  padding: 25px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  position: relative;
-  background-color: rgb(245, 245, 247);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    transition: 0.5s;
+  border: 2px solid rgb(0, 86, 179);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 450px;
+  transition: 0.3s;
 }
-.ExpertiseCards:hover{
+
+.ExpertiseCards:hover {
   cursor: pointer;
-  transform: translateY(-30px);
+  background-color: beige;
 }
+
 .ExpertiseCards:hover .OneCardFooter h3 {
   color: rgb(101, 40, 250);
 }
@@ -71,13 +75,7 @@
   border-radius: 0 10px 0 10px;
 }
 
-.ExpertiseCards .OneCardMain {
-  width: 100%;
-  height: 240px;
-  margin: 20px 0;
-  padding: 40px 100px;
-  box-sizing: border-box;
-}
+
 
 .ExpertiseCards .OneCardMain img {
   width: 200px;
@@ -86,10 +84,21 @@
 
 .ExpertiseCards .OneCardFooter {
   width: 100%;
-  height: 155px;
   text-align: center;
 }
 
 .ExpertiseCards .OneCardFooter h3 {
   transition: 1s;
 }
+
+@media (max-width: 767px) {
+  .ThreeSectionCards {
+    grid-template-columns: 410px;
+    gap: 30px;
+  }
+  .ExpertiseCards{
+    width: 300px;
+    height: 350px;
+  }
+}
+

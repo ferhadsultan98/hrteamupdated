@@ -16,7 +16,7 @@ let ThreeSection = () => {
       <div className="wedowhats">
         <div className="wedowhat">biz nə edirik?</div>
       </div>
-      <div className="threesection">
+      <div className="Threesection">
         <h1>Fəaliyyət sahələrimiz</h1>
         <div className="ThreeSectionCards">
           <div

@@ -1,40 +1,70 @@
-import LogoImg from "../../assets/hrteamlogo.png";
 import React, { useState, useEffect } from "react";
+import LogoImg from "../../assets/hrteamlogo.png";
 import "../header/header.css";
-import { Link } from "react-router-dom";
-import { GoClockFill } from "react-icons/go";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaBars, FaTimes } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
-import Hamburger from 'hamburger-react'
+import { useTranslation } from "react-i18next";
+import i18n from "../Languages/i18n";
+import Flag from 'react-world-flags';
+import { CiSearch } from "react-icons/ci";
+import { IoIosClose } from "react-icons/io";
 
-let Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+const Header = () => {
+  const { t, i18n } = useTranslation();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); 
+  const [scrollProgress, setScrollProgress] = useState(0); 
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false); 
+  const [isSearchVisible, setSearchVisible] = useState(false);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight;
+    const winHeight = window.innerHeight;
+    const totalDocScroll = docHeight - winHeight;
+    const scrollPercent = (scrollTop / totalDocScroll) * 100;
+    setScrollProgress(scrollPercent);
+
+    if (scrollTop > 0) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const closeMenu = (event) => {
-    if (!event.target.closest(".Menu")) {
-      setMenuOpen(false);
-    }
+  const toggleLanguageMenu = () => {
+    setLanguageMenuOpen(!languageMenuOpen);
   };
 
-  useEffect(() => {
-    document.addEventListener("click", closeMenu);
-    return () => {
-      document.removeEventListener("click", closeMenu);
-    };
-  }, []);
-  const [isToggled, setToggled] = useState(false)
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setLanguageMenuOpen(false);
+  };
+
+  const handleSearchClick = () => {
+    setSearchVisible(true);
+  };
+
+  const handleCloseSearch = () => {
+    setSearchVisible(false);
+  };
+
   return (
-    <header>
+    <header className={scrolled ? "scrolled" : ""}>
+      {/* Progress Bar */}
       <div className="topheader">
-        <div className="timer">
-          <GoClockFill />
-          <h3>İş saatları: I - V - 8:30 - 17:30</h3>
-        </div>
         <div className="contactsu">
           <div className="phone">
             <h3>
@@ -50,93 +80,104 @@ let Header = () => {
               </a>
             </h3>
           </div>
-          <div className="socials">
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              style={{ cursor: "pointer" }}
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              style={{ cursor: "pointer" }}
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              style={{ cursor: "pointer" }}
-            >
-              <FaLinkedinIn />
-            </a>
-          </div>
+        </div>
+        <div className="socials">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookF />
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedinIn />
+          </a>
         </div>
       </div>
-      <div className="bottomheader">
-        <div className="LogoAndNavbar">
-          <Link to="/">
-            <img src={LogoImg} alt="LogoImg.png" />
-          </Link>
-          <div className="Menu">
-            <button className="MenuToggle" onClick={toggleMenu}>
-            <Hamburger toggled={isToggled} toggle={setToggled} />
-            </button>
-            <ul className={menuOpen ? "active" : ""}>
-              <Link className="link" to="/">
-                <li>Ana Səhifə </li>
-              </Link>
-              <Link className="link" to="/about">
-                <li>Haqqımızda</li>
-              </Link>
-              <Link className="link">
-                {" "}
-                <li>
-                  Xidmətlər
-                  <div className="dropdown-content">
-                    <Link to="/services/oneservice">
-                      <h3>İnsan Resurslarının Autsorsinqi</h3>
-                    </Link>
-                    <Link to="/services/twoservice">
-                      <h3>İşə qəbul Autsorsinqi</h3>
-                    </Link>
-                    <Link to="/services/threeservice">
-                      <h3>İşçi qüvvəsi təchizatı</h3>
-                    </Link>
-                    <Link to="/services/fourservice">
-                      <h3>Satınalma Autsorsinqi</h3>
-                    </Link>
-                    <Link to="/services/fiveservice">
-                      <h3>Əmək haqqının hesablanması</h3>
-                    </Link>
-                    <Link to="/services/sixservice">
-                      <h3>Mühasibatlıq Autsorsinqi</h3>
-                    </Link>
-                    <Link to="/services/sevenservice">
-                      <h3>İmmiqrasiya Autsorsinqi</h3>
-                    </Link>
-                    <Link to="/services/eightservice">
-                      <h3>Təlim və qiymətləndirmə</h3>
-                    </Link>
-                  </div>
-                </li>
-              </Link>
-              <Link className="link" to="/vacancies">
-                <li>Vakansiyalar</li>
-              </Link>
-              <Link className="link" to="/contact">
-                <li>Əlaqə</li>
-              </Link>
+
+      <div className="BottomHeader">
+        <div className="progress-bar" style={{ width: `${scrollProgress}%` }}></div>
+        <div className="LogoSide">
+          <a href="/"><img src={LogoImg} alt="Logo" /></a>
+        </div>
+        
+        <ul className={`Navbar ${menuOpen ? "open" : ""}`}>
+          <li>
+            <a href="/">{t('header.homepage')}</a>
+          </li>
+          <li>
+            <a href="about">{t('header.about')}</a>
+          </li>
+          <li className="dropdown">
+            <a href="/">
+              {t('header.services')}
+            </a>
+            <ul className="dropdown-menu">
+              <li><a href="/services/oneservice">{t('header.service1')}</a></li>
+              <li><a href="/services/twoservice">{t('header.service2')}</a></li>
+              <li><a href="/services/threeservice">{t('header.service3')}</a></li>
+              <li><a href="/services/fourservice">{t('header.service4')}</a></li>
+              <li><a href="/services/fiveservice">{t('header.service5')}</a></li>
+              <li><a href="/services/sixservice">{t('header.service6')}</a></li>
+              <li><a href="/services/sevenservice">{t('header.service7')}</a></li>
+              <li><a href="/services/eightservice">{t('header.service8')}</a></li>
             </ul>
+          </li>
+          <li>
+            <a href="vacancies">{t('header.vacancies')}</a>
+          </li>
+          <li>
+            <a href="contact">{t('header.contact')}</a>
+          </li>
+        </ul>
+
+        <button className="button type1">
+          <span className="btn-txt">{t('header.startbtn')}</span>
+        </button>
+
+        <div className="HamburgerAndLanguage">
+          <div className="language-menu">
+            <button onClick={toggleLanguageMenu}>
+              {i18n.language === 'en' ? 'EN' : i18n.language === 'ru' ? 'RU' : 'AZ'}
+            </button>
+            {languageMenuOpen && (
+              <ul className="language-dropdown">
+                <li onClick={() => changeLanguage('az')}><Flag code="AZ" />AZ</li>
+                <li onClick={() => changeLanguage('en')}><Flag code="GB" />EN</li>
+                <li onClick={() => changeLanguage('ru')}><Flag code="RU" />RU</li>
+              </ul>
+            )}
           </div>
-          <Link className="link" to="/contact">
-          <button className="StartButton">İşə başlayın</button>
-              </Link>
+          <div className="hamburger" onClick={toggleMenu}>
+            {menuOpen ? <FaTimes /> : <FaBars />} 
+          </div>
+          <button className="search-icon" onClick={handleSearchClick}><b><CiSearch /></b></button>
         </div>
       </div>
-      <hr />
+
+      {isSearchVisible && (
+        <div className="search-overlay">
+          <div className="search-container">
+            <button className="close-button" onClick={handleCloseSearch}><b><IoIosClose /></b></button>
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search..."
+            />
+          </div>
+        </div>
+      )}
     </header>
   );
 };
