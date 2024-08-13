@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wedowhats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wedowhat {
+  text-align: center;
+  background-color: rgba(169, 169, 169, 0.486);
+  width: fit-content;
+  border-radius: 15px;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.799);
+}
+
+/* Three Section Started */
+.Threesection {
+  margin-bottom: 5vh;
+}
+
+.Threesection h1 {
+  text-align: center;
+  font-size: 55px;
+}
+
+.ThreeSectionCards {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ExpertiseCards {
+  border: 2px solid rgb(0, 86, 179);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 450px;
+  transition: 0.3s;
+}
+
+.ExpertiseCards:hover {
+  cursor: pointer;
+  background-color: beige;
+}
+
+.ExpertiseCards:hover .OneCardFooter h3 {
+  color: rgb(101, 40, 250);
+}
+
+.ExpertiseCards .OneCardHeader {
+  background-color: rgb(101, 40, 250);
+  color: white;
+  width: 70px;
+  height: 25px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 10px 0 10px;
+}
+
+
+
+.ExpertiseCards .OneCardMain img {
+  width: 200px;
+  height: 200px;
+}
+
+.ExpertiseCards .OneCardFooter {
+  width: 100%;
+  text-align: center;
+}
+
+.ExpertiseCards .OneCardFooter h3 {
+  transition: 1s;
+}
+
+@media (max-width: 767px) {
+  .ThreeSectionCards {
+    grid-template-columns: 410px;
+    gap: 30px;
+  }
+  .ExpertiseCards{
+    width: 300px;
+    height: 350px;
+  }
+}
+

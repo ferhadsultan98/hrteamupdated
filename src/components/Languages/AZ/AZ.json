@@ -1,0 +1,42 @@
+{
+    "header": {
+        "homepage": "Ana Səhifə",
+        "about": "Haqqımızda",
+        "services": "Xidmətlər",
+        "service1": "İnsan Resurslarının Autsorsinqi",
+        "service2": "İşə qəbul Autsorsinqi",
+        "service3": "İşçi qüvvəsi təchizatı",
+        "service4": "Satınalma Autsorsinqi",
+        "service5": "Əmək haqqının hesablanması Autsorsinqi",
+        "service6": "Mühasibatlıq Autsorsinqi",
+        "service7": "İmmiqrasiya Autsorsinqi",
+        "service8": "Təlim və qiymətləndirmə",
+        "vacancies": "Vakansiyalar",
+        "contact": "Əlaqə",
+        "startbtn": "İşə başlayın"
+    },
+    "main": {
+        "onecaptionheader": "İşə qəbul prosesi",
+        "onecaptiontext": "İnsan Resursları deyərkən ümumiyyətlə ilk hətta tək ağla gələn işə qəbul prosesidir deyərdim. Çünki doğru pozisiyaya doğru resursu təyin etmək bir şirkət üçün ən kritik işdir.",
+        "twocaptionheader": "Performansın idarə olunması",
+        "twocaptiontext": "Professional mütəxəssisi işə qəbul etmək hər şey demək deyil, eyni zamanda bu işçidən yüksək nəticələr də əldə etmək lazımdır. Şirkət mədəniyyətindən tutmuş iş saatlarına qədər çox fərqli və buna təsir göstərən bir çox mühüm amillər vardır.",
+        "threecaptionheader": "Personalın idarə olunması",
+        "threecaptiontext": "Bu başlığa İnsan Resurslarının idarə olunmasının “qaranlıq tərəfi” də deyə bilərik. Şəxsi işlərin toplanması, məzuniyyət-ezamiyyyət təqvimlərinin hazırlanması, əmək haqqı hesablanması və s. kimi sənədlərlə iş bölməsidir."
+        
+    },
+    "footer": {
+        "info": "Əlaqə",
+        "usefullinks": "Vacib keçidlər",
+        "news": "Yeniliklər",
+        "support": "Dəstək",
+        "latestupdate": "Son yeniliklər",
+        "subs": "Yeniliklərdən xəbərdar olmaq üçün abunə olun",
+        "maps": "Abdulvahab Salamzadə küçəsi ev 65a",
+        "inputholder": "Email yazın"
+    },
+    "notfoundpage": {
+        "title": "Nə isə səhv getdi!",
+        "backtomain": "İlkin səhifəyə qayıt."
+    }
+}
+  
