@@ -1,16 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './onesection.css'; 
+import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 
 const images = [
-  "https://www.cityoflacrosse.org/home/showpublishedimage/6477/638330639496800000",
-  "https://emeritus.org/wp-content/uploads/2023/04/a2-1.png",
-  "https://yourhumanresourcesolution.com/wp-content/uploads/2021/08/Human-Resources-Solution-Workforce-Management-WFM-Photo-Large-Orlando-Winter-Park-Maitland-College-Park-Windermere-Dr-Phillips-Winter-Garden-Ocoee-Slider.jpg",
-  "https://www.wise-systems.net/wp-content/uploads/2016/08/slider1.jpg"
+  {
+    src: "https://www.cityoflacrosse.org/home/showpublishedimage/6477/638330639496800000",
+    alt: "Slide 1",
+    text: "Bu birinci slide'ın metni."
+  },
+  {
+    src: "https://emeritus.org/wp-content/uploads/2023/04/a2-1.png",
+    alt: "Slide 2",
+    text: "Bu ikinci slide'ın metni."
+  },
+  {
+    src: "https://yourhumanresourcesolution.com/wp-content/uploads/2021/08/Human-Resources-Solution-Workforce-Management-WFM-Photo-Large-Orlando-Winter-Park-Maitland-College-Park-Windermere-Dr-Phillips-Winter-Garden-Ocoee-Slider.jpg",
+    alt: "Slide 3",
+    text: "Bu üçüncü slide'ın metni."
+  }
 ];
 
 const Slider = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const intervalRef = useRef(null);
+  const sliderRef = useRef(null);
 
   useEffect(() => {
     const nextImage = () => {
@@ -39,21 +52,36 @@ const Slider = () => {
     }, 3000);
   };
 
+  const handleMouseEnter = () => {
+    const arrows = sliderRef.current.querySelectorAll('.nav-arrow');
+    arrows.forEach(arrow => arrow.classList.add('visible'));
+  };
+
+  const handleMouseLeave = () => {
+    const arrows = sliderRef.current.querySelectorAll('.nav-arrow');
+    arrows.forEach(arrow => arrow.classList.remove('visible'));
+  };
+
   return (
-    <div className="sliderbodys">
+    <div className="sliderbodys" ref={sliderRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="slider-container">
         <div className="image-container">
-          {images.map((src, index) => (
-            <img
+          {images.map((slide, index) => (
+            <div
               key={index}
-              src={src}
-              alt={`Slide ${index}`}
-              className={`slide-image ${index === imageIndex ? 'image-active' : ''}`}
-            />
+              className={`slide ${index === imageIndex ? 'slide-active' : ''}`}
+            >
+              <img
+                src={slide.src}
+                alt={slide.alt}
+                className="slide-image"
+              />
+              <div className="slide-text">{slide.text}</div>
+            </div>
           ))}
         </div>
-        <button className="nav-arrow prev-arrow" onClick={handlePrevClick}>&#10094;</button>
-        <button className="nav-arrow next-arrow" onClick={handleNextClick}>&#10095;</button>
+        <button className="nav-arrow prev-arrow" onClick={handlePrevClick}><MdArrowBackIos /></button>
+        <button className="nav-arrow next-arrow" onClick={handleNextClick}><MdArrowForwardIos /></button>
       </div>
     </div>
   );

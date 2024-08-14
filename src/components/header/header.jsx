@@ -124,7 +124,7 @@ const Header = () => {
           <li className="dropdown">
             <a href="/">
               {t('header.services')}
-              <RiArrowDownWideFill className="arrow-icon" />
+              <i><RiArrowDownWideFill className="arrow-icon" /></i>
             </a>
             <ul className="dropdown-menu">
               <li><a href="/services/oneservice">{t('header.service1')}</a></li>

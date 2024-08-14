@@ -1,0 +1,22 @@
+/* styles.css */
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .statistics .stat {
+    text-align: center;
+  }
+  
+  .statistics .stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00bcd4;
+  }
+  
+  .statistics .stat p {
+    font-size: 1rem;
+    color: #666;
+  }
+  

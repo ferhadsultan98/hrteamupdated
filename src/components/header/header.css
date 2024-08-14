@@ -198,7 +198,9 @@
   display: inline-block;
   transition: 1s;
 }
-
+.Navbar .dropdown a i{
+  font-size: 17px;
+}
 .Navbar .dropdown-menu {
   display: none;
   position: absolute;
@@ -207,9 +209,7 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   transform: translateY(10px);
-  /* Start slightly below */
   opacity: 0;
-  /* Start invisible */
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
@@ -239,6 +239,7 @@
 }
 
 /* Show the dropdown menu on hover with animation */
+
 .Navbar .dropdown:hover .dropdown-menu {
   display: block;
   transform: translateY(0);
